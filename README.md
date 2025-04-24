@@ -1,4 +1,4 @@
-# 🐱‍👤 FURIA Fan Chat - Chatbot Não-Oficial
+# FURIA Fan Chat - Chatbot Não-Oficial
 
 Chatbot interativo para fãs da **FURIA Esports (CS:GO)**, com respostas sobre jogadores, partidas, estatísticas e a história do time.
 
