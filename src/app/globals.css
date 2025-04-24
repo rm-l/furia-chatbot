@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Para garantir que o SVG herde as cores */
 .next-image-container svg {
   color: currentColor;
 }

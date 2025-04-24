@@ -1,6 +1,6 @@
 "use client";
 import { ArrowPathIcon } from "@heroicons/react/24/solid";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Message from "./Message";
 
 export default function Chat() {
@@ -8,12 +8,17 @@ export default function Chat() {
     [
       {
         role: "assistant",
-        content: "Olá! Sou o bot da FURIA! Pergunte sobre o time!",
+        content: "Olá! Sou o bot da FURIA! Vamos conversar?",
       },
     ]
   );
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -49,8 +54,8 @@ export default function Chat() {
   };
 
   return (
-    <div className="w-full max-w-2xl mx-auto p-3 sm:p-4">
-      <div className="space-y-3 mb-4 sm:mb-6 text-black">
+    <div className="w-full max-w-2xl mx-auto p-3 sm:p-4 flex flex-col h-full">
+      <div className="space-y-3 mb-4 sm:mb-6 text-black overflow-y-auto flex-1">
         {messages.map((msg, i) => (
           <Message key={i} role={msg.role} content={msg.content} />
         ))}
@@ -59,8 +64,8 @@ export default function Chat() {
             <ArrowPathIcon className="h-5 w-5 animate-spin text-furia-orange" />
           </div>
         )}
+        <div ref={messagesEndRef} />
       </div>
-
       <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2">
         <input
           type="text"

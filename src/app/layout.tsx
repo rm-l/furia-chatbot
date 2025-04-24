@@ -6,7 +6,6 @@ export const metadata: Metadata = {
   description: "Chatbot não-oficial para fãs da FURIA Esports",
 };
 
-// src/app/layout.tsx
 export default function RootLayout({
   children,
 }: {
@@ -14,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen bg-furia-black text-gray-100 grid grid-rows-[1fr_auto]">
+      <body className="min-h-screen justify-center bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat bg-fixed text-gray-100 grid grid-rows-[1fr_auto]">
         <main className="overflow-auto">{children}</main>
       </body>
     </html>
