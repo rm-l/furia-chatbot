@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR">
-      <body className="min-h-screen justify-center bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat bg-fixed text-gray-100 grid grid-rows-[1fr_auto]">
+      <body className="min-h-screen max-w-screen justify-center bg-[url('/images/background.png')] bg-cover bg-center bg-no-repeat bg-fixed text-gray-100 grid grid-rows-[1fr_auto]">
         <main className="overflow-auto">{children}</main>
       </body>
     </html>
